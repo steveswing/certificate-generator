@@ -1,0 +1,7 @@
+<!-- template.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+    <text id="cert-name" x="50%" y="35%" dominant-baseline="middle" text-anchor="middle" font-size="40">[NAME]</text>
+    <text id="cert-description" x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-size="24">[DESCRIPTION]</text>
+    <text id="cert-id" x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="20">[CERT ID]</text>
+    <text id="cert-date" x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size="20">[DATE]</text>
+</svg>
