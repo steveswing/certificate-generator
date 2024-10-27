@@ -27,9 +27,7 @@ function generateCertificate() {
       // add more key-value pairs if needed
     };
 
-    const updatedSvg = replacePlaceholders(svgContent, values);
-    console.log(updatedSvg.length);
-    document.getElementById('certificate-container').innerHTML = updatedSvg;
+    document.getElementById('certificate-container').innerHTML = replacePlaceholders(svgContent, values);
   });
 }
 
@@ -37,11 +35,9 @@ function getSvgViewBoxDimensions(svgElement){
   const viewBox = svgElement.getAttribute('viewBox');
   if (viewBox) {
     let [x, y, w, h] = viewBox.split(' ').map(Number);
-    console.log(`ViewBox: ${x}, ${y}, ${w}, ${h}`);
     return [x, y, w, h];
   } else {
-    console.log('Default: 0, 0, 1280, 600');
-    return [0, 0, 1280, 600];
+    return [0, 0, 843, 596];
   }
 }
 
@@ -49,28 +45,6 @@ function getSvgViewBoxDimensions(svgElement){
 document.addEventListener('DOMContentLoaded', (event) => {
   const certificateContainer = document.getElementById('certificate-container');
   const downloadBtn = document.getElementById('download-pdf');
-
-  // Function to fill the certificate with dynamic data
-/*
-  function fillCertificate(recipient, achievement, certId, certDate) {
-    document.getElementById('recipient').textContent = recipient;
-    document.getElementById('achievement').textContent = achievement;
-    document.getElementById('certificate-id').textContent = certId;
-    document.getElementById('certificate-date').textContent = certDate;
-  }
-*/
-
-  // Example data, replace with actual data
-/*
-  const recipient = "Jane Doe";
-  const achievement = "Completion of Advanced Programming Course";
-  const certId = "C123456789";
-  const certDate = new Date().toLocaleDateString();
-*/
-
-/*
-  fillCertificate(recipient, achievement, certId, certDate);
-*/
 
   downloadBtn.addEventListener('click', () => {
     const svgElement = certificateContainer.querySelector('svg');
