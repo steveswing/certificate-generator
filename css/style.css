@@ -76,9 +76,99 @@ fieldset {
  * Allow only vertical resizing of textareas.
  */
 
-textarea {
-  resize: vertical;
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates 2 columns of equal width */
+  gap: 20px; /* Optional: Adds space between columns */
+  margin: auto;
+  max-width: calc(100% - 40px);
 }
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+label span {
+  display: inline-block;
+  width: 10rem;
+  vertical-align: top;
+}
+
+button {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #3f51b5;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #303f9f;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+  0px 3px 4px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+button:active {
+  background-color: #283593;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px rgba(63, 81, 181, 0.5);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="search"],
+input[type="color"],
+textarea {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+  width: calc(100% - 160px);
+}
+
+/*.certificate-container {*/
+/*  width: fit-content;*/
+/*}*/
 
 /* ==========================================================================
    Author's custom styles
@@ -172,9 +262,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
