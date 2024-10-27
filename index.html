@@ -29,19 +29,19 @@
         <fieldset>
             <label for="recipient">
                 <span>Recipient</span>
-                <input type="text" id="recipient" placeholder="Recipient's Name" onblur="generateCertificate()">
+                <input type="text" id="recipient" placeholder="Recipient's Name" onblur="generateCertificate()" required>
             </label>
             <label for="achievement">
                 <span>Achievement</span>
-                <textarea id="achievement" placeholder="Achievement" onblur="generateCertificate()"></textarea>
+                <textarea id="achievement" placeholder="Achievement" onblur="generateCertificate()" required></textarea>
             </label>
             <label for="certificateDate">
                 <span>Certificate Date</span>
-                <input type="text" id="certificateDate" placeholder="Certificate Date" onblur="generateCertificate()">
+                <input type="text" id="certificateDate" placeholder="Certificate Date" onblur="generateCertificate()" required>
             </label>
             <label for="certificateId">
                 <span>Certificate ID</span>
-                <input type="text" id="certificateId" placeholder="Certificate ID" onblur="generateCertificate()">
+                <input type="text" id="certificateId" placeholder="Certificate ID" onblur="generateCertificate()" required>
             </label>
         </fieldset>
     </form>
@@ -50,7 +50,7 @@
 <div id="certificate-container">
     <img id="certificate-image" src="img/certificate-template.svg" alt="Certificate Template">
 </div>
-<button id="download-pdf">Download as PDF</button>
+<button id="download-pdf" class="disabled" disabled>Download as PDF</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>

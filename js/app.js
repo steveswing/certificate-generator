@@ -41,10 +41,27 @@ function getSvgViewBoxDimensions(svgElement){
   }
 }
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
+  const form = document.getElementById('certForm');
+  const requiredFields = Array.from(form.querySelectorAll('[required]'));
+
   const certificateContainer = document.getElementById('certificate-container');
   const downloadBtn = document.getElementById('download-pdf');
+
+  function checkFormValidity() {
+    const allFilled = requiredFields.every(field => field.value.length > 0 || field.value.trim() !== '');
+    if (allFilled) {
+      downloadBtn.classList.remove('disabled');
+      downloadBtn.disabled = false;
+    } else {
+      downloadBtn.classList.add('disabled');
+      downloadBtn.disabled = true;
+    }
+  }
+
+  requiredFields.forEach(field => {
+    field.addEventListener('input', checkFormValidity);
+  })
 
   downloadBtn.addEventListener('click', () => {
     const svgElement = certificateContainer.querySelector('svg');
